@@ -1,0 +1,7 @@
+git命令操作
+
+	a.cd到当前目录
+	b.git init：初始化一个本地git仓储
+	c.git status
+	d.git add：将未被跟踪的文件添加到跟踪列表
+		.gitignore：构建忽略清单

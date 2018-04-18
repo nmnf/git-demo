@@ -5,3 +5,26 @@ git命令操作
 	c.git status
 	d.git add：将未被跟踪的文件添加到跟踪列表
 		.gitignore：构建忽略清单
+	- git commit ：将本地的变化提交到本地的仓库文件夹
+		-m ：提示信息
+		- git diff:查看修改了什么内容
+		- git log:查看日志
+		- git reset --hard hash值前6位
+
+	git remote add origin url:链接仓库
+	git push -u origin master：上传文件
+
+网页的即时显示
+	git branch gh-pages	创建分支
+	git checkout gh-pages 切换分支
+
+	git push -u origin gh-pages
+
+	网址：username.github.io/project_name
+
+DNS解析
+	在项目目录新建CNAME文件，其中包含想要的网址
+	在DNS服务商控制台，
+	新建记录
+		主机记录中填写CNAME文件中的值，记录类型选择CNAME
+		记录值填写username.github.io/project_name

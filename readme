@@ -1,20 +1,54 @@
+git命令操作
+	1.向Git介绍你自己
+		$ git config --global user.name "Your Name Comes Here"
+		$ git config --global user.email you@yourdomain.example.com
+	2.导入一个新项目
+		-	进入到项目文件夹中
+		-	创建空的本地仓库
+				git init
+		-	为当前的文件夹中所有文件拍摄一张快照,
+				git add .
 
+		-	此快照现在存储在Git称为“index”的临时暂存区域中,使用下面的命令将他们放到git创建的仓库中
+				git commit -m "提示信息"
+	3.改动
+		-	修改一些文件，然后将他们的更新内容更新到index中
+				git add file1 file2 ...
+		-	可以使用git diff --cached查看即将commit的内容
+				git diff --cached
+			如果没有--cached选项，git diff将会显示你已经修改但是还没有add到index中的内容
+		-	也可以使用下面的命令得到一个简短的总结报告
+				git status
+		-	使用commit将改动存储到本地仓库
+				git commit -m "改动信息"
 
-1.安装
-2.导入一个新项目
-	
-
-
-
-
-
-
-
-
-
-
-
-
+		-	一步到位的操作
+			git commit -a
+	4.查看项目历史
+		-	使用查看更改的历史记录
+			git log
+		-	想要看到完整的差异，使用:
+			git log -p
+		-	查看变动概述：
+			git log --stat --summary
+	5.管理分支
+		-	一个Git仓库可以维护多个分支的开发，要创建名为"xxx"的分支：	
+			git branch xxx
+		-	要显示当前存在的分支：
+			git branch
+		-	切换分支：
+			git checkout xxx
+		-	当改变文件，并commit后，使用git checkout master回到主分支后，发现在xxx分之下进行的改动不可见
+		-	要将xxx分支中进行的改动合并到master中，使用：
+			git merge xxx
+		-	如果更改不冲突表示完成，如果存在冲突，标记将会被留在问题文件中显示冲突
+			git diff
+		-	git commit -a将会提交合并
+		-	gitk	会显示一个关于历史的一个图形化显示
+		-	删除分支
+			git branch -d xxx
+	6.	使用git进行团队合作
+		
 
 
 
@@ -38,10 +72,11 @@
 
 git命令操作
 
-	a.cd到当前目录
-	b.git init：初始化一个本地git仓储
-	c.git status
-	d.git add：将未被跟踪的文件添加到跟踪列表
+	- cd到当前目录
+	- git init：初始化一个本地git仓储
+	- git status:
+		-s：输出简要的状态
+	- git add：将未被跟踪的文件添加到跟踪列表
 		.gitignore：构建忽略清单
 	- git commit ：将本地的变化提交到本地的仓库文件夹
 		-m ：提示信息
